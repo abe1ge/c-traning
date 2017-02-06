@@ -1,0 +1,6 @@
+c:\users\work\documents\visual studio 2013\Projects\NumberReader\NumberReader\bin\Debug\NumberReader.exe.config
+c:\users\work\documents\visual studio 2013\Projects\NumberReader\NumberReader\bin\Debug\NumberReader.exe
+c:\users\work\documents\visual studio 2013\Projects\NumberReader\NumberReader\bin\Debug\NumberReader.pdb
+c:\users\work\documents\visual studio 2013\Projects\NumberReader\NumberReader\obj\Debug\NumberReader.exe
+c:\users\work\documents\visual studio 2013\Projects\NumberReader\NumberReader\obj\Debug\NumberReader.pdb
+c:\users\work\documents\visual studio 2013\Projects\NumberReader\NumberReader\obj\Debug\NumberReader.csprojResolveAssemblyReference.cache
