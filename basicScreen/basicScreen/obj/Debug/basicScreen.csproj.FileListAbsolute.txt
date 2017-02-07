@@ -7,3 +7,12 @@ c:\users\administrator\documents\visual studio 2015\Projects\basicScreen\basicSc
 c:\users\administrator\documents\visual studio 2015\Projects\basicScreen\basicScreen\obj\Debug\basicScreen.csproj.GenerateResource.Cache
 c:\users\administrator\documents\visual studio 2015\Projects\basicScreen\basicScreen\obj\Debug\basicScreen.exe
 c:\users\administrator\documents\visual studio 2015\Projects\basicScreen\basicScreen\obj\Debug\basicScreen.pdb
+C:\Users\Administrator\Documents\abel\projects\c-traning\basicScreen\basicScreen\bin\Debug\basicScreen.exe.config
+C:\Users\Administrator\Documents\abel\projects\c-traning\basicScreen\basicScreen\obj\Debug\basicScreen.exe
+C:\Users\Administrator\Documents\abel\projects\c-traning\basicScreen\basicScreen\obj\Debug\basicScreen.pdb
+C:\Users\Administrator\Documents\abel\projects\c-traning\basicScreen\basicScreen\bin\Debug\basicScreen.exe
+C:\Users\Administrator\Documents\abel\projects\c-traning\basicScreen\basicScreen\bin\Debug\basicScreen.pdb
+C:\Users\Administrator\Documents\abel\projects\c-traning\basicScreen\basicScreen\obj\Debug\basicScreen.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\abel\projects\c-traning\basicScreen\basicScreen\obj\Debug\basicScreen.Form1.resources
+C:\Users\Administrator\Documents\abel\projects\c-traning\basicScreen\basicScreen\obj\Debug\basicScreen.Properties.Resources.resources
+C:\Users\Administrator\Documents\abel\projects\c-traning\basicScreen\basicScreen\obj\Debug\basicScreen.csproj.GenerateResource.Cache
