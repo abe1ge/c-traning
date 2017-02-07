@@ -12,12 +12,12 @@ namespace objectOrianted
         static void Main(string[] args)
         {
 
-
+            
             Prime calculate = new Prime();
 
             calculate.print();
 
-           // Console.WriteLine(calculate.isPrime(37));
+            //Console.WriteLine(calculate.isPrime(2));
 
             ////delegation
             //Delegation.Ops cal = (x, y) =>

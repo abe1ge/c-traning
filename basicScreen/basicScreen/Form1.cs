@@ -26,18 +26,57 @@ namespace basicScreen
             textBox1.Text = "";
 
 
-            textBox3.Text = "Hello";
-            textBox4.Text = "Hello";
-            textBox5.Text = "Hello";
-            textBox6.Text = "Hello";
+            int firstNumber = 0;
+            int secondNumber = 0;
+
+            try
+            {
+                firstNumber = Int32.Parse(textBox3.Text);
+            }catch(System.FormatException)
+            {
+                textBox7.Text = "first number is not a number";
+            }
+            
+            try
+            {
+                secondNumber = Int32.Parse(textBox4.Text);
+            }
+            catch (System.FormatException)
+            {
+                textBox7.Text = "first number is not a number";
+            }
+
+            switch (textBox5.Text)
+            {
+                case "+":
+                    textBox6.Text = (firstNumber + secondNumber).ToString();
+                    break;
+                case "-":
+                    textBox6.Text = (firstNumber - secondNumber).ToString();
+                    break;
+                case "/":
+                    textBox6.Text = (firstNumber / secondNumber).ToString();
+                    break;
+                case "x":
+                    textBox6.Text = (firstNumber * secondNumber).ToString();
+                    break;
+                default:
+                    textBox6.Text = "come on maaan, what do you want";
+                    break;
+            }
             textBox7.Text = "Hello";
             textBox8.Text = "Hello";
             textBox9.Text = "Hello";
             textBox10.Text = "Hello";
-            textBox11.Text = "Hello";
+            textBox11.Text = "Hello"; 
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
