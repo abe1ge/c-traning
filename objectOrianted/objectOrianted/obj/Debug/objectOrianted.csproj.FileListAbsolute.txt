@@ -1,0 +1,6 @@
+c:\users\administrator\documents\visual studio 2015\Projects\objectOrianted\objectOrianted\bin\Debug\objectOrianted.exe.config
+c:\users\administrator\documents\visual studio 2015\Projects\objectOrianted\objectOrianted\bin\Debug\objectOrianted.exe
+c:\users\administrator\documents\visual studio 2015\Projects\objectOrianted\objectOrianted\bin\Debug\objectOrianted.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\objectOrianted\objectOrianted\obj\Debug\objectOrianted.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2015\Projects\objectOrianted\objectOrianted\obj\Debug\objectOrianted.exe
+c:\users\administrator\documents\visual studio 2015\Projects\objectOrianted\objectOrianted\obj\Debug\objectOrianted.pdb
