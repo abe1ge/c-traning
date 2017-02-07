@@ -4,3 +4,9 @@ c:\users\work\documents\visual studio 2013\Projects\NumberReader\NumberReader\bi
 c:\users\work\documents\visual studio 2013\Projects\NumberReader\NumberReader\obj\Debug\NumberReader.exe
 c:\users\work\documents\visual studio 2013\Projects\NumberReader\NumberReader\obj\Debug\NumberReader.pdb
 c:\users\work\documents\visual studio 2013\Projects\NumberReader\NumberReader\obj\Debug\NumberReader.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\abel\projects\c-traning\NumberReader\NumberReader\bin\Debug\NumberReader.exe.config
+C:\Users\Administrator\Documents\abel\projects\c-traning\NumberReader\NumberReader\bin\Debug\NumberReader.exe
+C:\Users\Administrator\Documents\abel\projects\c-traning\NumberReader\NumberReader\bin\Debug\NumberReader.pdb
+C:\Users\Administrator\Documents\abel\projects\c-traning\NumberReader\NumberReader\obj\Debug\NumberReader.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\abel\projects\c-traning\NumberReader\NumberReader\obj\Debug\NumberReader.exe
+C:\Users\Administrator\Documents\abel\projects\c-traning\NumberReader\NumberReader\obj\Debug\NumberReader.pdb

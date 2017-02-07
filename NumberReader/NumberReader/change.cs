@@ -17,7 +17,7 @@ namespace NumberReader
             } 
             else
             {
-                double leftover = given - cost;
+                double leftover = Math.Round(given - cost , 2);
 
                 Console.WriteLine("Total change is £" + leftover);
                 if (leftover >= 20)
@@ -53,29 +53,28 @@ namespace NumberReader
                 if (leftover >= 0.2)
                 {
                     Console.WriteLine("20p      :" + Math.Floor(leftover / 0.2));
-                    leftover = leftover % 0.2;
+                    leftover = Math.Round(leftover % 0.2, 2);
                 }
                 if (leftover >= 0.1)
                 {
-                    Console.WriteLine("10p      :" + Math.Floor(leftover / 0.1));
-                    leftover = leftover % 0.1;
+                    Console.WriteLine("10p      :" + Math.Ceiling(leftover / 0.1));
+                    leftover = Math.Round(leftover % 0.1);
                 }
                 if (leftover >= 0.05)
                 {
-                    Console.WriteLine("5p       :" + Math.Floor(leftover / 0.05));
-                    leftover = leftover % 0.05;
+                    Console.WriteLine("5p       :" + Math.Ceiling(leftover / 0.05));
+                    leftover = Math.Round(leftover % 0.05);
                 }
                 if (leftover >= 0.02)
                 {
-                    Console.WriteLine("2p       :" + Math.Floor(leftover / 0.02));
-                    leftover = leftover % 0.02;
+                    Console.WriteLine("2p       :" + Math.Ceiling(leftover / 0.02));
+                    leftover = Math.Round(leftover % 0.02);
                 }
                 if (leftover >= 0.01)
                 {
-                    Console.WriteLine("1p       :" + Math.Floor(leftover / 0.01));
+                    Console.WriteLine("1p       :" + Math.Ceiling(leftover / 0.01));
                     leftover = leftover % 0.01;
                 }
-
             }
             
             return 0.0;

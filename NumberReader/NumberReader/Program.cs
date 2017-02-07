@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace NumberReader
 {
+
     class WithString
     {
 
@@ -100,9 +101,10 @@ namespace NumberReader
 
         public string numToStr(int strnum)
         {
+            string result="";
             switch (strnum)
             {
-                case 0: return "";
+                case 0: return "";break;
                 case 1: return "one";
                 case 2: return "two";
                 case 3: return "three";
@@ -131,8 +133,34 @@ namespace NumberReader
                 case 90: return "ninty";
                 default : return ".";
             }
+            return result;
                 
         }
+    }
+
+    class dealException
+    {
+        public int calculate(int a, int b)
+        {
+            int c = 0;
+
+            if(b == 5)
+            {
+                DiviedByFiveEception x = new DiviedByFiveEception();
+                throw x;
+            }
+            else
+            {
+                c = a / b ;
+            }
+
+            return c;
+        }
+    }
+
+    class DiviedByFiveEception:Exception
+    {
+
     }
     class Program
     {
@@ -142,20 +170,25 @@ namespace NumberReader
             WithMaths changemth = new WithMaths();
             change givechange = new change();
 
+           
+
+            Console.Read();
             while (1 == 1)
             {
                 Console.WriteLine("How much did it cost?");
                 string scanner = Console.ReadLine();
                 
-
                 if (scanner != "exit")
                 {
                     Console.WriteLine("How much did the customer give?");
                     double given = Double.Parse(scanner);
+                
                     double cost = Double.Parse(Console.ReadLine());
+
+
                     Console.WriteLine(givechange.giveChange(Double.Parse(scanner), cost));
-                    //Console.WriteLine(changemth.calculate(Int32.Parse(scanner)));
-                    //Console.WriteLine(change.render(scanner));
+                    //Console.WriteLine(changestr.render(scanner);
+                    //Console.WriteLine(givechange.(scanner));
 
                 }
                 else
