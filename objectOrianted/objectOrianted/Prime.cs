@@ -8,7 +8,7 @@ namespace objectOrianted
 {
     class Prime
     {
-        static int number = 100;
+        int number = 100;
 
         //bool[] arr = new bool[number];
 
@@ -37,7 +37,27 @@ namespace objectOrianted
 
             return true;
         }
+    }
 
+    class PrimeTwo
+    {
+        bool[] number = new bool[50];
         
+        public void calculate(int n)
+        {
+            int i = 2;
+            if (number[i] == false)
+            {
+                Console.WriteLine(i);
+
+                for (int x = 2; x < n; x++)
+                {
+                    
+                }
+            }
+
+        }
+
+
     }
 }
