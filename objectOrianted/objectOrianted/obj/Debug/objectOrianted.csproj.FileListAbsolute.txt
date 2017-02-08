@@ -10,3 +10,9 @@ C:\Users\Administrator\Documents\abel\projects\c-traning\objectOrianted\objectOr
 C:\Users\Administrator\Documents\abel\projects\c-traning\objectOrianted\objectOrianted\bin\Debug\objectOrianted.exe
 C:\Users\Administrator\Documents\abel\projects\c-traning\objectOrianted\objectOrianted\bin\Debug\objectOrianted.pdb
 C:\Users\Administrator\Documents\abel\projects\c-traning\objectOrianted\objectOrianted\obj\Debug\objectOrianted.csprojResolveAssemblyReference.cache
+C:\Users\work\Documents\Visual Studio 2013\Projects\c-traning\objectOrianted\objectOrianted\bin\Debug\objectOrianted.exe.config
+C:\Users\work\Documents\Visual Studio 2013\Projects\c-traning\objectOrianted\objectOrianted\obj\Debug\objectOrianted.exe
+C:\Users\work\Documents\Visual Studio 2013\Projects\c-traning\objectOrianted\objectOrianted\obj\Debug\objectOrianted.pdb
+C:\Users\work\Documents\Visual Studio 2013\Projects\c-traning\objectOrianted\objectOrianted\bin\Debug\objectOrianted.exe
+C:\Users\work\Documents\Visual Studio 2013\Projects\c-traning\objectOrianted\objectOrianted\bin\Debug\objectOrianted.pdb
+C:\Users\work\Documents\Visual Studio 2013\Projects\c-traning\objectOrianted\objectOrianted\obj\Debug\objectOrianted.csprojResolveAssemblyReference.cache

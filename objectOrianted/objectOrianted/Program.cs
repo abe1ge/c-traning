@@ -17,8 +17,9 @@ namespace objectOrianted
 
             PrimeTwo oddy = new PrimeTwo();
 
+
             oddy.calculate(50);
-            //calculate.print();
+            calculate.print();
 
             //Console.WriteLine(calculate.isPrime(2));
 

@@ -65,7 +65,7 @@ namespace objectOrianted
                         {
                             try
                             {
-                                number[result] = false;
+                                number[result] = true;
                             }
                             catch (System.IndexOutOfRangeException)
                             {
