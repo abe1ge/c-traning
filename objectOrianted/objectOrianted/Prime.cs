@@ -46,14 +46,36 @@ namespace objectOrianted
         public void calculate(int n)
         {
             int i = 2;
-            if (number[i] == false)
-            {
-                Console.WriteLine(i);
 
-                for (int x = 2; x < n; x++)
+            while (i != n)
+            { 
+                if (number[i] == false)
                 {
-                    
+                    Console.WriteLine(i);
+
+                    for (int x = 2; x < n; x++)
+                    {
+                        int result = i * x;
+                        
+                        if (result >= n)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            try
+                            {
+                                number[result] = false;
+                            }
+                            catch (System.IndexOutOfRangeException)
+                            {
+                                break;
+                            }
+                            
+                        }
+                    }
                 }
+                i++;
             }
 
         }

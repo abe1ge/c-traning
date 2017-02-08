@@ -15,7 +15,10 @@ namespace objectOrianted
             
             Prime calculate = new Prime();
 
-            calculate.print();
+            PrimeTwo oddy = new PrimeTwo();
+
+            oddy.calculate(50);
+            //calculate.print();
 
             //Console.WriteLine(calculate.isPrime(2));
 
