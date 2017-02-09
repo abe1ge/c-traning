@@ -30,6 +30,5 @@ namespace objectOrianted
             Console.WriteLine("multiply:" + a + " x " + b + "=" + (a * b));
         }
 
-        
     }
 }

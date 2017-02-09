@@ -34,7 +34,7 @@ namespace basicScreen
                 firstNumber = Int32.Parse(textBox3.Text);
             }catch(System.FormatException)
             {
-                textBox7.Text = "first number is not a number";
+                textBox6.Text = "first number is not a number";
             }
             
             try
@@ -43,7 +43,7 @@ namespace basicScreen
             }
             catch (System.FormatException)
             {
-                textBox7.Text = "first number is not a number";
+                textBox6.Text = "first number is not a number";
             }
 
             switch (textBox5.Text)
@@ -64,11 +64,6 @@ namespace basicScreen
                     textBox6.Text = "come on maaan, what do you want";
                     break;
             }
-            textBox7.Text = "Hello";
-            textBox8.Text = "Hello";
-            textBox9.Text = "Hello";
-            textBox10.Text = "Hello";
-            textBox11.Text = "Hello"; 
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -79,6 +74,16 @@ namespace basicScreen
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+
+            if (b.Text == "click me")textBox7.Text = "I have been clicked";
+
+
+            if (b.Text == "I created") textBox8.Text = "I have been created";
         }
     }
 }
