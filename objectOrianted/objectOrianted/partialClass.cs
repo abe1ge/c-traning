@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace objectOrianted
 {
-    class partialClass
+    partial class partialClass
+    {
+        public void testOne()
+        {
+            Console.WriteLine(chillin);
+        }
+    }
+    partial class partialClass
+    {
+
+    }
+    partial class partialClass
     {
     }
 }

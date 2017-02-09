@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace objectOrianted
 {
+    //using a prime function found on wikipidea 
     class Prime
     {
         int number = 100;
-
-        //bool[] arr = new bool[number];
-
+        
+        //loop through every number and print if it is a prime
         public void print()
         {
         for (int i = 0; i <= number ; i++)
@@ -20,6 +20,8 @@ namespace objectOrianted
             }
         }
 
+
+        //calculation to find if a number is prime or not
         public bool isPrime(int n)
         {
 
@@ -39,6 +41,7 @@ namespace objectOrianted
         }
     }
 
+    //prime using multiplying method 
     class PrimeTwo
     {
         bool[] number = new bool[50];

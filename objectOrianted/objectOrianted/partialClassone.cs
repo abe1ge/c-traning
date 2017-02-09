@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace objectOrianted
 {
-    class partialClassone
+    partial class partialClass
     {
+        int chillin = 23;
     }
 }
