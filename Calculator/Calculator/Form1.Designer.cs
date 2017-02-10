@@ -232,9 +232,10 @@
             this.buttonStandered.TabIndex = 2;
             this.buttonStandered.Text = "std";
             this.buttonStandered.UseVisualStyleBackColor = true;
+            this.buttonStandered.Click += new System.EventHandler(this.buttonSience_Click);
             // 
             // buttonSience
-            // 
+            //  "(3+5) * 4"
             this.buttonSience.Location = new System.Drawing.Point(174, 8);
             this.buttonSience.Name = "buttonSience";
             this.buttonSience.Size = new System.Drawing.Size(41, 23);
@@ -397,4 +398,4 @@
     }
 }
 
-// I would like to move to London, I understand that London is expensive but at the same time that is where a lot of people get together to share their knowledge and experience   
+// I would like to move to London, I understand that London is expensive but at the same time that is where a lot of people get together to share their knowledge and experience     v 
