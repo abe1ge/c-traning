@@ -31,8 +31,6 @@ namespace WordCound
             {
                 if (textBoxWords.Text[i] == ' ' && 
                     textBoxWords.Text[i- 1] != ' ') numWords++;
-                
-               
             }
             try
             {
@@ -47,30 +45,16 @@ namespace WordCound
         
         private void buttonConvert_Click(object sender, EventArgs e)
         {
-            /*Convert the string
-             * Double the numbers
-             * Lower case to upper and upper case to lower
-             * special charectors stay the same
-             * */
-            string converted = "";
-            converted += (textBoxWords.Text.Select(x => convertStr(x))).ToArray(); 
-
-            //for (int i = 0; i < textBoxWords.Text.Length; i++)
-            //{
-            //    if (Char.IsNumber(textBoxWords.Text[i])) converted += Int32.Parse(textBoxWords.Text[i].ToString()) * 2;
-            //    else if (Char.IsLetter(textBoxWords.Text[i]))
-            //    {
-            //        if (Char.IsLower(textBoxWords.Text[i]))
-            //            converted += textBoxWords.Text[i].ToString().ToUpper();
-            //        else converted += textBoxWords.Text[i].ToString().ToLower();
-            //    }
-            //    else converted += textBoxWords.Text[i];
-            //}
-            textBoxConverted.Text += textBoxWords.Text.Select(x => convertStr(x)).ToArray();
+            textBoxConverted.Text = string.Concat(textBoxWords.Text.Select(x => convertStr(x)));
         }
 
         private string convertStr(Char c)
         {
+            /* Convert a char
+             * double the number
+             * Lower case to upper and upper case to lower
+             * special charectors stay the same
+             * */
             if (Char.IsNumber(c)) return (Int32.Parse(c.ToString()) * 2).ToString();
             else if (Char.IsLetter(c))
             {
