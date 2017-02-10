@@ -42,7 +42,7 @@ namespace Calculator
             try
             {
                 firstNum = Int32.Parse(textBox1.Text);
-                textBox1.Text = "";
+                textBox1.Text += B.Text;
             }
             catch (System.FormatException)
             {
@@ -60,25 +60,29 @@ namespace Calculator
                     textBox1.Text = "";
                     break;
                 case "=":
-                    switch (opp)
-                    {
-                        case "+":
-                            result = firstNum + Int32.Parse(textBox1.Text);
-                            textBox1.Text = result.ToString();
-                            break;
-                        case "-":
-                            result = firstNum - Int32.Parse(textBox1.Text);
-                            textBox1.Text = result.ToString();
-                            break;
-                        case "/":
-                            result = firstNum / Int32.Parse(textBox1.Text);
-                            textBox1.Text = result.ToString();
-                            break;
-                        case "x":
-                            result = firstNum * Int32.Parse(textBox1.Text);
-                            textBox1.Text = result.ToString();
-                            break;
-                    }
+
+                    DataTable dt = new DataTable();
+                    textBox1.Text = dt.Compute(textBox1.Text, "").ToString();
+                    
+                    //switch (opp)
+                    //{
+                    //    case "+":
+                    //        result = firstNum + Int32.Parse(textBox1.Text);
+                    //        textBox1.Text = result.ToString();
+                    //        break;
+                    //    case "-":
+                    //        result = firstNum - Int32.Parse(textBox1.Text);
+                    //        textBox1.Text = result.ToString();
+                    //        break;
+                    //    case "/":
+                    //        result = firstNum / Int32.Parse(textBox1.Text);
+                    //        textBox1.Text = result.ToString();
+                    //        break;
+                    //    case "x":
+                    //        result = firstNum * Int32.Parse(textBox1.Text);
+                    //        textBox1.Text = result.ToString();
+                    //        break;
+                    //}
                     break;
             }
         }
