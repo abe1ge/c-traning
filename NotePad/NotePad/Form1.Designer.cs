@@ -41,15 +41,15 @@
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.formatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // richTextBoxMain
             // 
-            this.richTextBoxMain.Location = new System.Drawing.Point(5, 45);
+            this.richTextBoxMain.Location = new System.Drawing.Point(5, 31);
             this.richTextBoxMain.Name = "richTextBoxMain";
             this.richTextBoxMain.Size = new System.Drawing.Size(490, 500);
             this.richTextBoxMain.TabIndex = 0;
@@ -76,10 +76,6 @@
             this.buttonOpen.UseVisualStyleBackColor = true;
             this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // buttonSaveAs
             // 
             this.buttonSaveAs.Location = new System.Drawing.Point(501, 127);
@@ -99,7 +95,7 @@
             this.formatToolStripMenuItem});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
-            this.menuStripMain.Size = new System.Drawing.Size(923, 28);
+            this.menuStripMain.Size = new System.Drawing.Size(615, 28);
             this.menuStripMain.TabIndex = 2;
             this.menuStripMain.Text = "menuStriMain";
             // 
@@ -151,7 +147,7 @@
             // fontToolStripMenuItem
             // 
             this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
-            this.fontToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(122, 26);
             this.fontToolStripMenuItem.Text = "Font...";
             this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
             // 
@@ -159,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 550);
+            this.ClientSize = new System.Drawing.Size(615, 533);
             this.Controls.Add(this.buttonOpen);
             this.Controls.Add(this.buttonSaveAs);
             this.Controls.Add(this.buttonSave);

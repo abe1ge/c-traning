@@ -53,13 +53,15 @@ namespace NotePad
                 richTextBoxMain.SaveFile(currentFile);
             }
         }
-
         private void buttonOpen_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
+            if (openFileDialog1.FileName != "")
+            {
             currentFile = openFileDialog1.FileName;
             richTextBoxMain.LoadFile(currentFile);
             this.Text = "NotePad - " + currentFile;
+            }
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -80,7 +82,6 @@ namespace NotePad
                 richTextBoxMain.SaveFile(currentFile);
             }
         }
-
         private void fontToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fontDialog1.ShowDialog();
