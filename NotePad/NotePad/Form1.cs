@@ -42,13 +42,16 @@ namespace NotePad
             {
                 saveFileDialog1.ShowDialog();
                 currentFile = saveFileDialog1.FileName;
-                if (currentFile != "") richTextBoxMain.SaveFile(currentFile);
+                if (currentFile != "")
+                {
+                    richTextBoxMain.SaveFile(currentFile);
+                    this.Text = "NotePad - " + currentFile;
+                }
             }
             else
             {
                 richTextBoxMain.SaveFile(currentFile);
             }
-            
         }
 
         private void buttonOpen_Click(object sender, EventArgs e)
@@ -56,6 +59,26 @@ namespace NotePad
             openFileDialog1.ShowDialog();
             currentFile = openFileDialog1.FileName;
             richTextBoxMain.LoadFile(currentFile);
+            this.Text = "NotePad - " + currentFile;
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem B = (ToolStripMenuItem)sender;
+            if (currentFile == "" || B.Text == "Save As")
+            {
+                saveFileDialog1.ShowDialog();
+                currentFile = saveFileDialog1.FileName;
+                if (currentFile != "")
+                {
+                    richTextBoxMain.SaveFile(currentFile+".txt");
+                    this.Text = "NotePad - " + currentFile;
+                }
+            }
+            else
+            {
+                richTextBoxMain.SaveFile(currentFile);
+            }
         }
 
        
