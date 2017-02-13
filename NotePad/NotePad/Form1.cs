@@ -13,89 +13,136 @@ namespace NotePad
     public partial class FormNotePad : Form
     {
         string currentFile = "";
+        int changed = 0;
+
+        public delegate void returnVoid();
+
+        #region Form
         public FormNotePad()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            //richTextBoxMain.Text += " box intial width" + richTextBoxMain.Width + " box initail hight " + richTextBoxMain.Height;
-            //richTextBoxMain.Text += " frame intial width" + this.Width + " frame initail hight " + this.Height ;
-        }
+        private void Form1_Load(object sender, EventArgs e){        }
 
         private void FormNotePad_Resize(object sender, EventArgs e)
         {
-           //richTextBoxMain.Width = (this.Width - 25);
-           // richTextBoxMain.Height = (this.Height - 20);
+            richTextBoxMain.Size = new Size(this.Width - 25, this.Height - 65);
         }
+
+        #endregion
 
         private void richTextBoxMain_TextChanged(object sender, EventArgs e)
         {
-
+            changed = 1;
         }
+      
 
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            Button B = (Button)sender;
-            if (currentFile == "" || B.Text == "Save As" )
-            {
-                saveFileDialog1.ShowDialog();
-                currentFile = saveFileDialog1.FileName;
-                if (currentFile != "")
-                {
-                    richTextBoxMain.SaveFile(currentFile);
-                    this.Text = "NotePad - " + currentFile;
-                }
-            }
-            else
-            {
-                richTextBoxMain.SaveFile(currentFile);
-            }
-        }
+        //when trying to open a document
         private void buttonOpen_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
-            if (openFileDialog1.FileName != "")
+            if (changed != 0)
             {
-            currentFile = openFileDialog1.FileName;
-            richTextBoxMain.LoadFile(currentFile);
-            this.Text = "NotePad - " + currentFile;
+                saveDialogBox(open);
             }
+            else open();
         }
 
+        
+        // when trying to save the file
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem B = (ToolStripMenuItem)sender;
             if (currentFile == "" || B.Text == "Save As")
             {
-                saveFileDialog1.ShowDialog();
-                currentFile = saveFileDialog1.FileName;
-                if (currentFile != "")
-                {
-                    richTextBoxMain.SaveFile(currentFile+".txt");
-                    this.Text = "NotePad - " + currentFile;
-                }
+                save();
             }
             else
             {
                 richTextBoxMain.SaveFile(currentFile);
             }
         }
+
+        //when creating a new document
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (changed != 0)
+            {
+                string caption = "current file";
+                if (currentFile != "") caption = currentFile;
+
+                saveDialogBox(newF);
+            }
+            else newF();
+        }
+
+        private void closeExit(object sender, EventArgs e)
+        {
+            ToolStripMenuItem B = (ToolStripMenuItem)sender;
+
+            if (changed == 0)
+            {
+
+            }
+        }
+
+        #region new/save/open
+
+        public void saveDialogBox(returnVoid what)
+        {
+            switch (MessageBox.Show("Do you like to save the file", "Save dialog", MessageBoxButtons.YesNoCancel))
+            {
+                case DialogResult.Yes:
+                    save();
+                    if (changed == 0) what();
+                    break;
+                case DialogResult.No:
+                    what();
+                    break;
+            }
+        }
+
+        private void newF()
+        {
+            richTextBoxMain.Text = "";
+            currentFile = "";
+            changed = 0;
+            this.Text = "NotePad - New";
+        }
+
+        private void save()
+        {
+            saveFileDialog1.ShowDialog();
+            currentFile = saveFileDialog1.FileName;
+            if (currentFile != "")
+            {
+                richTextBoxMain.SaveFile(currentFile + ".txt");
+                this.Text = "NotePad - " + currentFile;
+                changed = 0;
+            }
+        }
+
+        private void open()
+        {
+            openFileDialog1.ShowDialog();
+            if (openFileDialog1.FileName != "")
+            {
+                currentFile = openFileDialog1.FileName;
+                richTextBoxMain.LoadFile(currentFile);
+                this.Text = "NotePad - " + currentFile;
+            }
+        }
+
+        #endregion
+
+
+
+
         private void fontToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fontDialog1.ShowDialog();
             richTextBoxMain.Font = fontDialog1.Font;
         }
-
-        
-
-       
-
-       
-
-
-        
 
        
     }
