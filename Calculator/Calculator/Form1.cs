@@ -23,7 +23,7 @@ namespace Calculator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.BackColor = Color.Black;
+            this.BackColor = Color.Beige;
         }
 
         private void Number_Click(object sender, EventArgs e)
@@ -100,5 +100,39 @@ namespace Calculator
                 this.Width = 240;
             }
         }
+
+        private void button_MouseEnter(object sender, EventArgs e)
+        {
+            Button B = (Button)sender;
+
+            switch(B.Text)
+            {
+                case "*":
+                    labelHelp.Text = "Help: Use for multipcation";
+                    break;
+                case "/":
+                    labelHelp.Text = "Help: Use for division";
+                    break;
+                case "+":
+                    labelHelp.Text = "Help: Use for addition";
+                    break;
+                case "-":
+                    labelHelp.Text = "Help: Use for subtraction";
+                    break;
+                case "C":
+                    labelHelp.Text = "Help: Use for Clear";
+                    break;
+                case "=":
+                    labelHelp.Text = "Help: Use for equal/result";
+                    break;
+            }
+        }
+
+        private void button_MouseLeave(object sender, EventArgs e)
+        {
+            labelHelp.Text = "Help: Hover over button to see help";
+        }
+
+
     }
 }
