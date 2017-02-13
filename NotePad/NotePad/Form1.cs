@@ -23,7 +23,7 @@ namespace NotePad
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e){        }
+        private void Form1_Load(object sender, EventArgs e) {  }
 
         private void FormNotePad_Resize(object sender, EventArgs e)
         {
@@ -76,13 +76,19 @@ namespace NotePad
             else newF();
         }
 
-        private void closeExit(object sender, EventArgs e)
+        private void closeExitToolStrip_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem B = (ToolStripMenuItem)sender;
 
-            if (changed == 0)
+            if (changed != 0)
             {
-
+                if (B.Text == "Close") saveDialogBox(close);
+                else saveDialogBox(exit);
+            }
+            else
+            {
+                if (B.Text == "Close") close();
+                else exit();
             }
         }
 
@@ -108,6 +114,9 @@ namespace NotePad
             currentFile = "";
             changed = 0;
             this.Text = "NotePad - New";
+            richTextBoxMain.Visible = true;
+            saveToolStripMenuItem.Enabled = true;
+            saveAsToolStripMenuItem.Enabled = true;
         }
 
         private void save()
@@ -130,11 +139,25 @@ namespace NotePad
                 currentFile = openFileDialog1.FileName;
                 richTextBoxMain.LoadFile(currentFile);
                 this.Text = "NotePad - " + currentFile;
+                richTextBoxMain.Visible = true;
+                saveToolStripMenuItem.Enabled = true;
+                saveAsToolStripMenuItem.Enabled = true;
             }
         }
 
-        #endregion
+        private void close()
+        {
+            richTextBoxMain.Text = "";
+            currentFile = "";
+            changed = 0;
+            this.Text = "NotePad - none";
+            richTextBoxMain.Visible = false;
+            saveToolStripMenuItem.Enabled = false;
+            saveAsToolStripMenuItem.Enabled = false;
+        }
 
+        private void exit() { Application.Exit(); }
+        #endregion
 
 
 
@@ -144,6 +167,15 @@ namespace NotePad
             richTextBoxMain.Font = fontDialog1.Font;
         }
 
-       
+        private void closeExitToolStrip_Click(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void redExit_Click(object sender, FormClosedEventArgs e)
+        {
+            if (changed != 0) saveDialogBox(exit);
+            else exit();
+        }
     }
 }
