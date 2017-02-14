@@ -1,4 +1,6 @@
-﻿namespace NotePad
+﻿using System;
+
+namespace NotePad
 {
     partial class FormNotePad
     {
@@ -53,6 +55,13 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
+
+            // 
+            // saveFileDialog1
+            // 
+            saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog1.Title = "Please choose the folder to save your file";
+            saveFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             // 
             // fileToolStripMenuItem
             // 

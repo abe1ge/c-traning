@@ -55,6 +55,7 @@ namespace NotePad
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem B = (ToolStripMenuItem)sender;
+            //if no current file or clicked save as open save
             if (currentFile == "" || B.Text == "Save As")
             {
                 save();
