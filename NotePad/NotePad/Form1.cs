@@ -21,6 +21,8 @@ namespace NotePad
         public FormNotePad()
         {
             InitializeComponent();
+            richTextBoxMain.Size = new Size(this.Width - 25, this.Height - 65);
+
         }
 
         private void Form1_Load(object sender, EventArgs e) {  }
@@ -92,7 +94,7 @@ namespace NotePad
             }
         }
 
-        #region new/save/open
+        #region saveDialog/new/save/open/close
 
         public void saveDialogBox(returnVoid what)
         {
@@ -142,6 +144,7 @@ namespace NotePad
                 richTextBoxMain.Visible = true;
                 saveToolStripMenuItem.Enabled = true;
                 saveAsToolStripMenuItem.Enabled = true;
+                changed = 0;
             }
         }
 
