@@ -14,7 +14,6 @@ namespace HsbcDatabase
     public partial class Form1 : Form
     {
         SqlConnection con;
-        SqlCommand cmd;
         SqlDataReader r;
 
         public Form1()
@@ -25,44 +24,50 @@ namespace HsbcDatabase
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            con = new SqlConnection("Data Source=(LocalDB)\\v11.0;AttachDbFilename='C:\\Users\\work\\Documents\\Visual Studio 2013\\Projects\\c-traning\\HsbcDatabase\\HsbcDatabase\\HsbcDb.mdf';Integrated Security=True");
-            con.Open();
-            cmd = new SqlCommand();
-            cmd.Connection = con;
-        }
-
-        private string getNextId(char acc, char gender)
-        {
-            string id = "";
-
-            id += acc;
-            id += gender;
-            cmd.CommandText = "select MAX( SUBSTRING(accountNo, 3,3)) as topAccount from Accounts where Substring(accountNo, 1, 1) = 'a'";
-            r = cmd.ExecuteReader();
-            if (r.Read())
+            con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Administrator\\Documents\\abel\\projects\\c-traning\\HsbcDatabase\\HsbcDatabase\\HsbcDb.mdf;Integrated Security=True");
+            try
             {
-                id += (Int32.Parse(r["topAccount"].ToString())) + 1;
+                con.Open();
             }
-            r.Read();
-            return id;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Can not connect to the database, Please check your internet connection.");
+            }
+
         }
+
 
         private void buttonCreateAcc_Click(object sender, EventArgs e)
         {
 
-            string regno = "";
-            if (radioButtonCurrentA.Checked)
+            String accType, gender;
+
+            if (radioButtonCurrentA.Checked) accType = "C";
+            else accType = "S";
+
+            if (radioButtonMale.Checked) gender = "M";
+            else gender = "F";
+            using (SqlCommand cmd = new SqlCommand())
             {
-                if (radioButtonMale.Checked) regno = getNextId('a','m');
-                else regno = getNextId('a', 'f');
+                cmd.Connection = con;
+                cmd.CommandText = "insert into Accounts values('" + accType + gender +
+                    "'+(select Format (COALESCE((MAX( SUBSTRING(accountNo, 3,3)) + 1),1), '000')  " +
+                    " as topAccount from Accounts where accountNo like '" + accType + "%'),'" + textBoxName.Text + "','" + textBoxAddress.Text + "');";
+                
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    labelAccountCreated.Text = "Account has been created for" + textBoxName.Text;
+
+                    textBoxName.Text = "";
+                    textBoxAddress.Text = "";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("The is no longer space avaliable for new accounts");
+                }
             }
-            else
-            {
-                if (radioButtonMale.Checked) regno = getNextId('s', 'm');
-                else regno = getNextId('s', 'f');
-            }
-            cmd.CommandText = "insert into Accounts values(" + regno + ",'" + textBoxName.Text + "','" + textBoxAddress.Text + "')";
-            cmd.ExecuteNonQuery();
+
         }
 
     }
