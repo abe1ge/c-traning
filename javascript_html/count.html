@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+<script>
+	function qac()
+	//using the arrays to find elements
+	{
+		var x,y,z;
+		x = window.document.forms[0].elements[0]; 
+		y = window.document.forms[0].elements[1];
+		
+		if (isNaN(x.value))
+		{
+			window.alert("First Number is missing");
+			x.focus();
+		}
+		else
+		{
+			x = parseInt(x.value);
+			
+			if(isNaN(y.value))
+			{
+			window.alert("Second Number is missing");
+			y.focus();
+			}
+			else
+			{
+				y = parseInt(y.value);
+				z = x + y;
+				window.document.forms[0].elements[2].value = z;
+			}
+		}
+	}
+	function countE()
+	{
+		x = document.querySelectorAll("input[type=text]").length;
+		
+		y = document.forms[0];
+		
+		window.alert(x);
+		for (i = 0; i < x.elements.length; i++)
+		{
+			if(x.elements[i].value == "")
+			{
+				y.elements[i].focus();
+				break;
+			}
+		}
+	}
+	</script>
+
+</head>
+
+<body>
+	<form name="Frm">
+		First No : <input Type="Text">
+		<BR>
+		First No : <input Type="Text">
+		<BR>
+		Second No : <input Type="Text" >
+		<BR>
+		Result : <input Type="Text" >
+		<BR>
+		First No : <input Type="Text">
+		<BR>
+		Second No : <input Type="Text" >
+		<BR>
+		Result : <input Type="Text" >
+		<BR>
+		First No : <input Type="Text">
+		<BR>
+		Second No : <input Type="Text" >
+		<BR>
+		Result : <input Type="Text" >
+		<BR>
+		<input Type="Button" name = "bb"value="calculate" onClick="countE()">
+	</form>
+</body>
+</html>

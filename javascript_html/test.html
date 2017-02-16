@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+<script>
+	function qa()
+	//using element names to find elements 
+	{
+		var x,y,z;
+		if (window.document.Frm.a.value == "")
+		{
+			window.alert("First Number is missing");
+			window.document.Frm.a.focus();
+		}
+		else
+		{
+			x = parseInt(window.document.Frm.a.value);
+			if(window.document.Frm.b.value == "")
+			{
+				window.alert("Second Number is missing");
+				window.document.Frm.b.focus();
+			}
+			else
+			{
+				y = parseInt(window.document.Frm.b.value);
+				z = x + y;
+				window.document.Frm.c.value = z;
+			}
+		}
+	}
+	function qac()
+	//using the arrays to find elements
+	{
+		var x,y,z;
+		x = window.document.forms[0].elements[0]; 
+		y = window.document.forms[0].elements[1];
+		
+		if (isNaN(x.value))
+		{
+			window.alert("First Number is missing");
+			x.focus();
+		}
+		else
+		{
+			x = parseInt(x.value);
+			
+			if(isNaN(y.value))
+			{
+			window.alert("Second Number is missing");
+			y.focus();
+			}
+			else
+			{
+				y = parseInt(y.value);
+				z = x + y;
+				window.document.forms[0].elements[2].value = z;
+			}
+		}
+	}
+
+
+	</script>
+
+</head>
+
+<body>
+	<form name="Frm">
+		First No : <input Type="Text" name="a">
+		<BR>
+		Second No : <input Type="Text" name="b">
+		<BR>
+		Result : <input Type="Text" name="c">
+		<BR>
+		<input Type="Button" name = "bb"value="calculate" onClick="qac()">
+	</form>
+</body>
+</html>
