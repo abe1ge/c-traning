@@ -135,24 +135,18 @@ namespace HsbcDatabase
             }
         }
 
-        private void withdrawToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonWDSearch_Click(object sender, EventArgs e)
         {
             Button B = (Button)sender;
 
-            if (B.Name == "buttonWSearch") searchByAccNo(textBoxWAccountNo, textBoxWName, textBoxWaddress);
-            else searchByAccNo(textBoxDAccountNo, textBoxDName, textBoxDAddress);
+            if (B.Name == "buttonWSearch") searchByAccNo(textBoxWAccountNo, textBoxWName, textBoxWaddress, textBoxWBalance);
+            else searchByAccNo(textBoxDAccountNo, textBoxDName, textBoxDAddress, textBoxDBalance);
         }
 
-        private void searchByAccNo(TextBox accountNo, TextBox name, TextBox address)
+        private void searchByAccNo(TextBox accountNo, TextBox name, TextBox address, TextBox balance)
         {
-
             cmd.Connection = con;
-            cmd.CommandText = "select * from accounts where accountNo = '" + accountNo.Text + "'";
+            cmd.CommandText = "select name,address, (select SUM(amount) from deposit where accountNo = '" + accountNo.Text + "') + (select SUM(amount) from deposit where accountNo = '" + accountNo.Text + "') as balance from Accounts where accountNo = '" + accountNo.Text + "'";
 
             using (r = cmd.ExecuteReader())
             {
@@ -163,6 +157,7 @@ namespace HsbcDatabase
                     {
                         name.Text = r["name"].ToString();
                         address.Text = r["address"].ToString();
+                        balance.Text = r["balance"].ToString();
                     }
                 }
                 catch (Exception)
@@ -170,7 +165,6 @@ namespace HsbcDatabase
                     MessageBox.Show("Can not connect to database, please try again");
                 }
             }
-
 
         }
     }

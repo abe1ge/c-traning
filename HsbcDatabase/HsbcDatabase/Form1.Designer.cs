@@ -268,7 +268,6 @@
             this.withdrawToolStripMenuItem.Name = "withdrawToolStripMenuItem";
             this.withdrawToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.withdrawToolStripMenuItem.Text = "account";
-            this.withdrawToolStripMenuItem.Click += new System.EventHandler(this.withdrawToolStripMenuItem_Click);
             // 
             // addAccountToolStripMenuItem
             // 
