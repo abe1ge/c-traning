@@ -167,5 +167,24 @@ namespace HsbcDatabase
             }
 
         }
+
+        private void buttonWithdraw_Click(object sender, EventArgs e)
+        {
+            Button B = (Button)sender;
+
+            if (B.Text == "Withdraw")
+            {
+                transation(textBoxWithdraw, "W");
+            }
+        }
+
+        private void transation(TextBox money, string tran)
+        {
+            double amount = double.Parse(money.Text);
+            cmd.Connection = con;
+            if (tran == "W") cmd.CommandText = "";
+
+
+        }
     }
 }

@@ -466,10 +466,11 @@
             // 
             this.buttonWithdraw.Location = new System.Drawing.Point(299, 371);
             this.buttonWithdraw.Name = "buttonWithdraw";
-            this.buttonWithdraw.Size = new System.Drawing.Size(75, 23);
+            this.buttonWithdraw.Size = new System.Drawing.Size(83, 23);
             this.buttonWithdraw.TabIndex = 3;
             this.buttonWithdraw.Text = "Withdraw";
             this.buttonWithdraw.UseVisualStyleBackColor = true;
+            this.buttonWithdraw.Click += new System.EventHandler(this.buttonWithdraw_Click);
             // 
             // buttonWSearch
             // 
